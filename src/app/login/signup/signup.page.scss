@@ -1,0 +1,193 @@
+.main-container {
+    width: 100%;
+    height: 100%;
+    background: url("../../../assets/background/buildings2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.secondary-container {
+    background-image: linear-gradient(to bottom, rgba(243, 240, 224, 1), rgba(243, 240, 224, 0.85));
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.secondary-container {
+    
+    .top {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            height: 55px;
+            width: 50px;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+    }
+
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        flex: 3;
+    }
+}
+
+.bottom {
+    .first {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .lead2 {
+            font-size: 12px;
+            font-weight: 600;
+            color: grey;
+            margin: 0 0 20px 0;
+        }
+    
+        .mainLead {
+            width: 80%;
+            margin: 20px 0;
+            font-size: 16px;
+            font-weight: 700;
+            color: rgba(0, 0, 139, 0.68);
+        }
+
+        .in {
+            width: 80%;
+            margin-bottom: 10px;
+
+            ion-label {
+                font-size: 12px;
+                font-weight: 600;
+                color: rgba(0, 0, 139, 0.68)
+            }
+
+            ion-input {
+                border-bottom: 1px solid darkblue;
+            }
+        }
+
+        .button {
+            width: 80%;
+            position: relative;
+            user-select: none;
+            
+            button {
+                width: 100%;
+                margin: 20px 0 0 0;
+                padding: 15px 0;
+                border-radius: 40px;
+                outline: none;
+                border: 1px solid white;
+                background-color: white;
+                font-weight: 700;
+                color: rgba(52, 73, 190, 1);
+                position: relative;
+                overflow: hidden;
+            }
+            button:active {
+                background-color: rgba(223, 223, 243, 1);
+            }
+        }
+
+        .resend {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+
+            .txt {
+                font-size: 12px;
+                font-weight: 600;
+                color: grey;
+            }
+            .hylyt {
+                font-weight: 700;
+                color: #3b5998;
+            }
+        }
+
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        
+            .otp {
+                color: rgb(116, 114, 114);
+                border-style: none;
+                width: 40px;
+                height: 40px;
+                font-size: 25px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        
+            td {
+                border: 2px solid darkgray;
+            }
+        }
+
+        .profileImage {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            border: 2px solid white;
+            position: relative;
+
+            .unselected {
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(0, 0, 0, 0.4);
+                color: white;
+
+                img {
+                    height: 35px;
+                    width: 35px;
+                    margin-bottom: 5px;
+                    margin-top: -5px;
+                }
+                span {
+                    font-size: 12px;
+                    font-weight: 600;
+                }
+            }
+            
+            .selected {
+                height: 100%;
+                width: 100%;
+                border-radius: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(255, 255, 255, 1);
+                
+                img {
+                    max-height: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+
+    }
+}

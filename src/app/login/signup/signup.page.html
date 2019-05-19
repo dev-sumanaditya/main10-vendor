@@ -1,0 +1,143 @@
+<div class="main-container">
+  <div class="secondary-container">
+      <div class="top">
+          <img src="../../../assets/logo/logo-blue.svg">
+      </div>
+
+      <div class="bottom">
+        <div class="first" *ngIf="step == 1">
+            <div class="mainLead">
+                Register To Main10
+            </div>
+
+            <div class="in">
+                <ion-label position="stacked">Name</ion-label>
+                <ion-input autofocus="true" inputmode="text" type="text" spellcheck="false" maxlength="30" mode="md" required="true"></ion-input>
+            </div>
+
+            <div class="in">
+                <ion-label position="stacked">Phone Number</ion-label>
+                <ion-input inputmode="tel" type="tel" spellcheck="false" maxlength="10" mode="md" pattern="tel" required="true"></ion-input>
+            </div>
+
+            <div class="button">
+                <button class="ion-activatable" (click)="verify()">Verify Mobile <ion-ripple-effect></ion-ripple-effect></button>
+            </div>
+        </div>
+
+        <div class="first" *ngIf="step == 2">
+            <h6>Enter OTP</h6>
+            <p class="lead2">Please enter the verification code sent to</p>
+            <p class="lead2"> +91 9110110101</p>
+            <table>
+                <tr>
+                  <td>
+                    <ion-input type="number" #otp1 class="otp" pattern="[0-9]{6}" maxlength="1" size="1" (keyup)="nxt($event, otp2 , '')">
+                    </ion-input>
+                  </td>
+                  <td>
+                    <ion-input type="number" #otp2 class="otp" pattern="[0-9]{6}" maxlength="1" size="1" (keyup)="nxt($event, otp3, otp1)">
+                    </ion-input>
+                  </td>
+                  <td>
+                    <ion-input type="number" #otp3 class="otp" pattern="[0-9]{6}" maxlength="1" size="1" (keyup)="nxt($event, otp4, otp2)">
+                    </ion-input>
+                  </td>
+                  <td>
+                    <ion-input type="number" #otp4 class="otp" pattern="[0-9]{6}" maxlength="1" size="1" (keyup)="nxt($event, '', otp3)">
+                    </ion-input>
+                  </td>
+                </tr>
+            </table>
+            <div class="button">
+                <button class="ion-activatable" (click)="moreDetails()">NEXT <ion-ripple-effect></ion-ripple-effect></button>
+            </div>
+
+            <div class="resend">
+                <p class="txt">Didn't Receive the OTP?</p>
+                <a class="hylyt" (click)="resendOtp()">Resend OTP</a>
+            </div>
+        </div>
+
+        <div class="first" *ngIf="step === 3">
+
+          <div class="profileImage ion-activatable" (click)="selectImage()">
+
+              <ion-ripple-effect></ion-ripple-effect>
+            <div class="unselected" *ngIf="!selectedImage">
+              <img src="../../../assets/icon/add_image.png">
+              <span>ADD PHOTO</span>
+            </div>
+            <div class="selected" *ngIf="selectedImage">
+              <img src="{{imageData}}">
+            </div>
+          </div>
+
+          <div class="button">
+            <button class="ion-activatable" (click)="details()">Proceed <ion-ripple-effect></ion-ripple-effect></button>
+          </div>
+        </div>
+
+        <div class="first" *ngIf="step === 4">
+            <div class="mainLead">
+                Personal Details
+            </div>
+            <div class="in">
+                <ion-label position="stacked">Email</ion-label>
+                <ion-input autofocus="true" inputmode="email" type="email" spellcheck="false" maxlength="40" mode="md"></ion-input>
+            </div>
+            <div class="in">
+                <ion-label position="stacked">Aadhar Number</ion-label>
+                <ion-input inputmode="numeric" type="number" spellcheck="false" mode="md" required="true"></ion-input>
+            </div>
+
+            <div class="button">
+                <button class="ion-activatable" (click)="address()">Proceed <ion-ripple-effect></ion-ripple-effect></button>
+            </div>
+        </div>
+
+        <div class="first" *ngIf="step === 5">
+            <div class="mainLead">
+                Add Shop Details
+            </div>
+
+            <div class="in">
+                <ion-label position="stacked">Shop Name</ion-label>
+                <ion-input autofocus="true" inputmode="text" type="text" spellcheck="false" maxlength="50" mode="md"></ion-input>
+            </div>
+            <div class="in">
+                <ion-label position="stacked">Location</ion-label>
+                <ion-input inputmode="text" type="text" spellcheck="false" maxlength="50" mode="md"></ion-input>
+            </div>
+
+            <div class="button">
+                <button class="ion-activatable" (click)="address2()">Next <ion-ripple-effect></ion-ripple-effect></button>
+            </div>
+        </div>
+
+        <div class="first" *ngIf="step === 6">
+          <div class="mainLead">
+            Shop Address
+          </div>
+
+          <div class="in">
+              <ion-label position="stacked">Address</ion-label>
+              <ion-input inputmode="text" type="text" spellcheck="false" maxlength="60" mode="md"></ion-input>
+          </div>
+          <div class="in">
+              <ion-label position="stacked">Address (line 2)</ion-label>
+              <ion-input inputmode="text" type="text" spellcheck="false" maxlength="60" mode="md"></ion-input>
+          </div>
+          <div class="in">
+              <ion-label position="stacked">Address (line 3)</ion-label>
+              <ion-input inputmode="text" type="text" spellcheck="false" maxlength="60" mode="md"></ion-input>
+          </div>
+
+          <div class="button">
+              <button class="ion-activatable" (click)="register()">Register <ion-ripple-effect></ion-ripple-effect></button>
+          </div>
+        </div>
+
+      </div>
+  </div>
+</div>

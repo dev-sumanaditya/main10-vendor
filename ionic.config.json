@@ -1,5 +1,7 @@
 {
   "name": "vendor",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

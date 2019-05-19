@@ -5,4 +5,13 @@ import { Component } from '@angular/core';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {}
+export class Tab1Page {
+
+  public ShopStatus: Boolean = false;
+
+  public dummy = [1,1,1,1,1,1,1,,1,1,1,1,1];
+
+  shopState() {
+    this.ShopStatus = !this.ShopStatus;
+  }
+}
