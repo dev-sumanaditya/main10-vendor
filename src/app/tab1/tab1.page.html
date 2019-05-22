@@ -2,43 +2,9 @@
     <div class="topBar">
         Main10
     </div>
-    <div class="page">
-        <div class="top">
-            <div class="l">
-                <div class="image">
-                    <img src="../../assets/images/profile.jpg" alt="">
-                </div>
-            </div>
-
-            <div class="r">
-                <h6 class="shopName">The Food Factory</h6>
-                <div class="item">
-                    <ion-icon name="person"></ion-icon>
-                    <h6 class="userName">Hitesh Kumar</h6>
-                </div>
-                <div class="item">
-                    <ion-icon name="call"></ion-icon>
-                    <h6 class="contact">957368826</h6>
-                </div>
-            </div>
-        </div>
-
-        <div class="shopStat" (click)="shopState()">
-            <button [class.closed]="!ShopStatus" [class.open]="ShopStatus">
-                <span *ngIf="ShopStatus">SHOP OPEN <ion-icon name="flash"></ion-icon> </span>
-                <span *ngIf="!ShopStatus">SHOP CLOSED <ion-icon name="close-circle"></ion-icon> </span>
-            </button>
-        </div>
-
-        <div class="orders">
-            <p class="lead">New Orders</p>
-            <div class="new">
-                <app-order-card *ngFor="let i of dummy"></app-order-card>
-            </div>
-            <p class="lead">Active Orders</p>
-            <div class="old">
-                <app-order-card-active *ngFor="let i of dummy"></app-order-card-active>
-            </div>
-        </div>
-    </div>
+    <ul>
+        <li><a routerLink="/login">Login page</a></li>
+        <li><a routerLink="/signup">Signup page</a></li>
+        <li><a routerLink="/">Home page</a></li>
+    </ul>
 </div>

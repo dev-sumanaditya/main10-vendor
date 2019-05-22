@@ -10,6 +10,11 @@ export class TncPage implements OnInit {
 
   constructor(public router: Router) { }
 
+  slideOpts = {
+    initialSlide: 0,
+    speed: 400
+  };
+
   ngOnInit() {
   }
 

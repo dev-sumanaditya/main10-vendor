@@ -10,10 +10,36 @@ export class LoginPage implements OnInit {
 
   public x = true;
 
+  public toggleState: Boolean = true;
+
+  public phLogin: Boolean = false;
+  public emLogin: Boolean = false;
+  public sendingOtp: boolean = false;
+
   constructor(private toastController: ToastController) { }
 
   ngOnInit() {
   }
+
+
+
+  leftcl() {
+    this.toggleState = true;
+  }
+  rightcl() {
+    this.toggleState = false;
+  }
+
+  phoneLogin() {
+    this.sendingOtp = true 
+    setTimeout(() => {
+      this.phLogin = true;
+    }, 1500);
+  }
+  emailLogin() {
+    this.emLogin = true;
+  }
+
 
 
   sendOtp() {

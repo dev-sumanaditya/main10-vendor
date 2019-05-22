@@ -2,10 +2,64 @@
     <div class="secondary-container">
 
       <div class="ctr">
-          <h2 class="lead">Login</h2>
-          <div class="login">
-              <ion-icon ios="ios-call" md="md-call"></ion-icon>
-            <ion-input inputmode="tel" type="tel" spellcheck="false" maxlength="10" mode="md" pattern="tel" required="true" placeholder="Mobile Number"></ion-input>
+          <!-- radio btn -->
+          <div class="radio">
+            <div class="l" (click)="leftcl()" [class.black]="toggleState">
+              Phone
+            </div>
+            <div class="r" (click)="rightcl()" [class.black]="!toggleState">
+              Email
+            </div>
+            <div class="float" [class.cl-left]="toggleState" [class.cl-right]="!toggleState"></div>
+          </div>
+
+
+          <!-- Phone login -->
+          <div class="phone" *ngIf="!phLogin && toggleState">
+                <div class="in">
+                  <ion-icon ios="ios-call" md="md-call"></ion-icon>
+                  <ion-input placeholder="Phone Number" inputmode="tel" type="tel" spellcheck="false" maxlength="10" mode="ios" pattern="tel" required="true"></ion-input>
+                </div>
+                <div class="btn">
+                  <ion-button shape="round" expand="block" (click)="phoneLogin()">
+                    <span *ngIf="!sendingOtp">send otp</span>
+                    <span *ngIf="sendingOtp"><ion-spinner name="lines"></ion-spinner></span>
+                  </ion-button>
+                </div>
+                <div>
+                    <ion-button style="padding: 0 10px; margin-top: 20px;" shape="round" expand="block" fill="clear">Register as Vendor</ion-button>
+                </div>
+          </div>
+          <div class="phone" *ngIf="phLogin && toggleState">
+              <h6 class="lead">Enter OTP sent to mobile number</h6>
+              <h6 class="lead">9435322323</h6>
+              <div class="otpInput">
+                      <ion-input #otp1 autocomplete="off" (keyup)="nxt($event, otp2 , '')" autofocus=true inputmode="tel" pattern="[0-9]{6}" spellcheck="false" maxlength="1" mode="md" required="true"></ion-input>
+                      <ion-input #otp2 autocomplete="off" (keyup)="nxt($event, otp3, otp1)" inputmode="tel" pattern="[0-9]{6}" spellcheck="false" maxlength="1" mode="md" required="true"></ion-input>
+                      <ion-input #otp3 autocomplete="off" (keyup)="nxt($event, otp4, otp2)" inputmode="tel" pattern="[0-9]{6}" spellcheck="false" maxlength="1" mode="md" required="true"></ion-input>
+                      <ion-input #otp4 autocomplete="off" (keyup)="nxt($event, '', otp3)" inputmode="tel" pattern="[0-9]{6}" spellcheck="false" maxlength="1" mode="md" required="true"></ion-input>
+              </div>
+              <div class="btn">
+                  <ion-button shape="round" expand="block">LOGIN</ion-button>
+              </div>
+              <h6 class="lead" style="margin-top: 50px;">Resend OTP</h6>
+          </div>
+
+          <!-- Email login -->
+          <div class="phone" *ngIf="!toggleState">
+              <div class="in">
+                  <ion-icon ios="ios-mail" md="md-mail"></ion-icon>
+                  <ion-input autofocus="true" placeholder="Email" inputmode="email" type="email" spellcheck="false" maxlength="50" mode="ios" pattern="email" required="true"></ion-input>
+              </div>
+              <div class="in">
+                  <ion-icon ios="ios-lock" md="md-lock"></ion-icon>
+                  <ion-input placeholder="Password" inputmode="password" type="password" spellcheck="false" maxlength="50" mode="ios" pattern="password" required="true"></ion-input>
+              </div>
+              <div class="btn">
+                  <ion-button shape="round" expand="block">LOGIN</ion-button>
+              </div>
+              <h6 class="anchor" routerLink="/forgot">Forgot password?</h6>
+
           </div>
       </div>
     </div>

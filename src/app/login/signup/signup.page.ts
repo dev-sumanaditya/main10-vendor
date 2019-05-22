@@ -17,6 +17,8 @@ export class SignupPage implements OnInit {
   public selectedImage = false;
   public imageData = '';
 
+  public sendingOtp: boolean = false;
+
   constructor(
     public toastController: ToastController,
     public camera: Camera,
@@ -27,25 +29,31 @@ export class SignupPage implements OnInit {
   ngOnInit() {
   }
 
-  verify() {
-    this.step = 2;
+  sendOtp() {
+    this.sendingOtp = true 
+    setTimeout(() => {
+      this.step = 2;
+    }, 1500);
   }
 
-  moreDetails() {
+  verifyOtp() {
     this.step = 3;
   }
 
-  details() {
+  uploadImage() {
     this.step = 4;
   }
 
-  address() {
+  details() {
     this.step = 5;
   }
 
-  address2() {
+  details2() {
     this.step = 6;
   }
+
+
+
 
   register() {
     this.router.navigate(['tnc']);
